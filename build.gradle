@@ -27,6 +27,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.5.2'
 	compileOnly 'org.projectlombok:lombok'
 
 	//  MySQL 8.0.31 버전이상부터 사용
