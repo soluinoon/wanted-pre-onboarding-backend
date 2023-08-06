@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-import javax.persistence.Access;
-
 @Getter
 @AllArgsConstructor
 @Builder

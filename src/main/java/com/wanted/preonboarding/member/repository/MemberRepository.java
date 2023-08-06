@@ -3,7 +3,6 @@ package com.wanted.preonboarding.member.repository;
 import com.wanted.preonboarding.member.domain.Member;
 import com.wanted.preonboarding.member.exception.MemberNotFoundException;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 

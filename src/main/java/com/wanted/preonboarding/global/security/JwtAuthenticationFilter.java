@@ -1,8 +1,5 @@
 package com.wanted.preonboarding.global.security;
 
-import com.wanted.preonboarding.global.security.JwtTokenProvider;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
@@ -14,7 +11,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-
 
 public class JwtAuthenticationFilter extends GenericFilterBean {
 
