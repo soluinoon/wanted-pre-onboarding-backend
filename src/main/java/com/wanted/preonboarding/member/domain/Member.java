@@ -21,11 +21,14 @@ import java.util.List;
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String email;
+    private String email;
 
-    String password;
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @CreatedDate
     @Column(updatable = false)
@@ -37,5 +40,6 @@ public class Member {
     public Member(String email, String password) {
         this.email = email;
         this.password = password;
+        this.role = Role.ROLE_MEMBER;
     }
 }
