@@ -7,6 +7,7 @@ import com.wanted.preonboarding.member.exception.MemberDuplicatedException;
 import com.wanted.preonboarding.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,11 +16,13 @@ import org.springframework.stereotype.Service;
 public class MemberService {
 
     private final MemberRepository memberRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public SignUpResponse save(final SignUpRequest signUpRequest) {
         validateDuplicatedMember(signUpRequest.getEmail());
 
-        Member member = new Member(signUpRequest.getEmail(), signUpRequest.getPassword());
+        String encodedPassword = passwordEncoder.encode(signUpRequest.getPassword());
+        Member member = new Member(signUpRequest.getEmail(), encodedPassword);
 
         memberRepository.save(member);
         log.info("Member saved '{}'", member.getEmail());
