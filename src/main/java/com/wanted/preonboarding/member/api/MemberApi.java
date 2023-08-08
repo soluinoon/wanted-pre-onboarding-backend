@@ -1,6 +1,8 @@
 package com.wanted.preonboarding.member.api;
 
+import com.wanted.preonboarding.member.dto.request.LoginRequest;
 import com.wanted.preonboarding.member.dto.request.SignUpRequest;
+import com.wanted.preonboarding.member.dto.response.LoginResponse;
 import com.wanted.preonboarding.member.dto.response.SignUpResponse;
 import com.wanted.preonboarding.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +20,13 @@ public class MemberApi {
 
     private final MemberService memberService;
 
-    @PostMapping
+    @PostMapping("/signup")
     public SignUpResponse signUp(final @RequestBody @Valid SignUpRequest signUpRequest) {
         return memberService.save(signUpRequest);
+    }
+
+    @PostMapping("/login")
+    public LoginResponse login(final @RequestBody @Valid LoginRequest loginRequest) {
+        return memberService.login(loginRequest);
     }
 }

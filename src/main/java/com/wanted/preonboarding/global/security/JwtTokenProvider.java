@@ -59,7 +59,7 @@ public class JwtTokenProvider {
                 .compact();
 
         return TokenDto.builder()
-                .role(Role.ROLE_MEMBER)
+                .role(Role.MEMBER)
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
                 .build();
